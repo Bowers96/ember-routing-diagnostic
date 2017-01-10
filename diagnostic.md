@@ -13,14 +13,14 @@ Record your responses inside the fenced code blocks below each question.
     `campus`?
 
     ```md
-    <!-- your response here -->
+    ember generate route campus/boston
     ```
 
 1.  Suppose you have a nested route at the URL `/campus/boston`. How would you
     use the `link-to` helper to generate an appropriate link?
 
     ```md
-    <!-- your response here -->
+    {{#link-to 'campus' boston}} <h3> Random Link Name </h3> {{/link-to}}
     ```
 
 1.  Explain **at least** two differences between the following two route
@@ -28,14 +28,10 @@ Record your responses inside the fenced code blocks below each question.
 
     ```js
     this.route('products', function () {
-      this.route('product', { path: '/:product_id' }); // <= 👀here
+      this.route('product', { path: '/:product_id' }); // this is a route that is nested and the other one is not
     });
 
-    this.route('product', { path: '/products/:product_id' }); // <= 👀 here
-    ```
-
-    ```md
-    <!-- your response here -->
+    this.route('product', { path: '/products/:product_id' }); // this route has a different path than the other one
     ```
 
 1.  Suppose we have the following route definition:
@@ -54,5 +50,7 @@ Record your responses inside the fenced code blocks below each question.
 1.  Inside a template, how do we reference data provided by a Route?
 
     ```md
-    <!-- your response here -->
+    {{#each list.items as |item|}}
+      {{listr-list/item item=item toggleDone='toggleItemDone'}}
+    {{/each}}
     ```
